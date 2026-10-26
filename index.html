@@ -92,7 +92,7 @@ function drawBird(x, y, size, angle, color, alpha) {
   ctx.globalAlpha = alpha;
   ctx.fillStyle = color;
   ctx.shadowColor = color;
-  ctx.shadowBlur = size > 8 ? 18 : 2;
+  ctx.shadowBlur = size > 18 ? 30 : 4;
 
   ctx.beginPath();
   ctx.moveTo(-size, 0);
@@ -115,7 +115,7 @@ function animate(now) {
   const glow = ctx.createRadialGradient(
     W / 2, H / 2, 0, W / 2, H / 2, Math.min(W, H) * 0.5
   );
-  glow.addColorStop(0, "rgba(0, 50, 110, 0.16)");
+  glow.addColorStop(0, "rgba(0, 30, 110, 0.16)");
   glow.addColorStop(1, "rgba(0, 0, 0, 0)");
   ctx.fillStyle = glow;
   ctx.fillRect(0, 0, W, H);
@@ -140,7 +140,7 @@ function animate(now) {
 
     drawBird(
       x, y, size, angle, color,
-      0.45 + smooth * 0.55
+      0.65 + smooth * 0.55
     );
   });
 
