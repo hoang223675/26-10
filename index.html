@@ -43,8 +43,8 @@ function createBirds() {
     const left = Math.random() < 0.5;
 
     // Mục tiêu tạo thành hình chim lớn ở giữa
-    const nx = Math.random() * 2 - 1;
-    const ny = Math.random() * 1.4 - 0.7;
+    const nx = Math.random() * 30 - 1;
+    const ny = Math.random() * 1.4 - 0.2;
 
     // Dáng chim cách điệu: thân, đầu, cánh và đuôi
     const body =
@@ -108,7 +108,7 @@ function drawBird(x, y, size, angle, color, alpha) {
 function animate(now) {
   const time = (now - startTime) / 1000;
 
-  ctx.fillStyle = "rgba(0, 0, 0, 0.32)";
+  ctx.fillStyle = "rgba(1, 5, 0,8, 0.32)";
   ctx.fillRect(0, 0, W, H);
 
   // Ánh sáng xanh nhẹ ở trung tâm
@@ -116,7 +116,7 @@ function animate(now) {
     W / 2, H / 2, 0, W / 2, H / 2, Math.min(W, H) * 0.5
   );
   glow.addColorStop(0, "rgba(0, 30, 110, 0.16)");
-  glow.addColorStop(1, "rgba(0, 0, 0, 0)");
+  glow.addColorStop(1, "rgba(0, 8, 0, 23)");
   ctx.fillStyle = glow;
   ctx.fillRect(0, 0, W, H);
 
